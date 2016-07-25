@@ -6,7 +6,7 @@ class CreateDocuments < ActiveRecord::Migration[5.0]
       t.string :tag
       t.string :department
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
