@@ -1,2 +1,20 @@
-<h1>Documents#new</h1>
-<p>Find me in app/views/documents/new.html.erb</p>
+<% provide(:title, "New Document") %>
+<div class="row">
+    <div class="medium-4 columns medium-offset-4">
+        <%= form_for @document do |f| %>
+            <%= f.label :Title %>
+            <%= f.text_field :title %>
+
+            <%= f.label :Link %>
+            <%= f.text_field :link %>
+
+            <%= f.label :Tag %>
+            <%= f.text_field :tag %>
+
+            <%= f.label :Department %>
+            <%= f.text_field :department %>
+
+            <%= f.submit "Add New Document", class: "button extended primary" %>
+        <% end %>
+    </div>
+</div>

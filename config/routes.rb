@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'documents/new'
-
-  get 'users/new'
-
   root 'fixed_pages#home'
 
   get 'about' => 'fixed_pages#about'
@@ -20,5 +16,7 @@ Rails.application.routes.draw do
 
 
   resources :users
+
+  resources :documents
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
