@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'documents/new'
+
   get 'users/new'
 
   root 'fixed_pages#home'
