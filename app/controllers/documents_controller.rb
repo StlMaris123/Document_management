@@ -13,6 +13,10 @@ class DocumentsController < ApplicationController
     end
   end
 
+  def index
+    @documents = Document.all
+  end
+
   private
   def document_params
     params.require(:document).permit(:title, :link, :tag, :department)
