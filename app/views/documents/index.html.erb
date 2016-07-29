@@ -1,1 +1,15 @@
-<%= render @documents %>
+<% provide(:title, "All documents") %>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>LINK</th>
+            <th>TAG</th>
+            <th>DEPARTMENT</th>
+            <tr/>
+    </thead>
+    <tbody>
+        <%= render @documents %>
+    </tbody>
+</table>
