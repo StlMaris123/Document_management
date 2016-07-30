@@ -1,0 +1,24 @@
+<% provide(:title, "Edit document") %>
+<div class="row">
+    <div class="medium-6 columns medium-offset-3">
+        <h3>Edit the fields you want to change then click submit</h3>
+        <%= form_for @document do |f| %>
+            <%= f.label :Title %>
+            <%= f.text_field :title %>
+
+            <%= f.label :Link %>
+            <%= f.text_field :link %>
+
+            <%= f.label :Tag %>
+            <%= f.text_field :tag %>
+
+            <%= f.label :Department %>
+            <%= f.text_field :department %>
+
+            <%= f.submit "Update Document", class: "button large extended primary" %>
+
+        <% end %>
+    </div>
+</div>
+
+    

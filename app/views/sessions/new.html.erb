@@ -1,16 +1,18 @@
 <% provide(:title, "SignIn") %>
-<div class="medium-6 columns medium-offset-3">
-    <h1> Sign In</h1>
-    <%= form_for(:session, url: login_url)  do |f|%>
-        <%= f.label :Name %>
-        <%= f.text_field :name %>
+<div class="row">
+    <div class="medium-6 columns medium-offset-3">
+        <h1> Sign In</h1>
+        <%= form_for(:session, url: login_url)  do |f|%>
+            <%= f.label :Name %>
+            <%= f.text_field :name %>
 
-        <%= f.label :Password %>
-        <%= f.password_field :password %>
-        <%= f.label :remember_me, class: "checkbox" do  %>
-            <%= f.check_box :remember_me %>
+            <%= f.label :Password %>
+            <%= f.password_field :password %>
+            <%= f.label :remember_me, class: "checkbox" do  %>
+                <%= f.check_box :remember_me %>
             <% end %>
-        <%= f.submit "SignIn", class: "button small expanded primary" %>
-    <% end %>
-    <h5> New user? Sign Up Now <%= link_to "Signup", new_user_url %>
+            <%= f.submit "SignIn", class: "button small expanded primary" %>
+        <% end %>
+        <h5> New user? Sign Up Now <%= link_to "Signup", new_user_url %>
+   </div>
 </div>

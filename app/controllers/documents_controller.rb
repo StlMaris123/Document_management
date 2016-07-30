@@ -19,6 +19,10 @@ class DocumentsController < ApplicationController
     @documents = Document.all
   end
 
+  def edit
+    @document = Document.find(params[:id])
+  end
+
   private
   def document_params
     params.require(:document).permit(:title, :link, :tag, :department)
