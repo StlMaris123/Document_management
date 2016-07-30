@@ -1,6 +1,6 @@
 class DocumentsController < ApplicationController
   before_action :logged_in_user, only: [:create, :edit, :update, :index, :destroy]
-  before_action :correct_user, only: [:create, :edit, :update, :index, :destroy]
+ # before_action :correct_user, only: [:create, :edit, :update, :index, :destroy]
   def new
     @document = Document.new
   end
@@ -21,6 +21,16 @@ class DocumentsController < ApplicationController
 
   def edit
     @document = Document.find(params[:id])
+  end
+   
+  def update
+    @document = Document.find(params[:id])
+    if @document.update_attributes(document_params)
+      flash[:success] = "The document  was successfully updated"
+      redirect_to documents_url
+    else
+      render 'edit'
+    end 
   end
 
   private
