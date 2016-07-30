@@ -1,4 +1,6 @@
 class DocumentsController < ApplicationController
+  before_action :logged_in_user, only: [:create, :edit, :update, :index, :destroy]
+  before_action :correct_user, only: [:create, :edit, :update, :index, :destroy]
   def new
     @document = Document.new
   end

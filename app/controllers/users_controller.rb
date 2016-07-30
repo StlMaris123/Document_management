@@ -51,19 +51,6 @@ class UsersController < ApplicationController
 
   end
   # confirms a logged-in user
-  def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:alert] = "Please log in first" 
-      redirect_to login_url
-    end
-  end
-
-  #conforms the correct user
-  def correct_user
-    @user = User.find(params[:id])
-    redirect_to(root_url) unless current_user?(@user)
-  end
 
   def admin_user
     redirect_to(root_url) unless current_user.admin?
