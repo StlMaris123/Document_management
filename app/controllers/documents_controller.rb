@@ -17,6 +17,9 @@ class DocumentsController < ApplicationController
 
   def index
     @documents = Document.all
+    if params[:movies]
+      @document = where("department = ?",params[:movies])
+    end
   end
 
   def edit

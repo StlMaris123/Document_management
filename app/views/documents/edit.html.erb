@@ -3,6 +3,7 @@
     <div class="medium-6 columns medium-offset-3">
         <h3>Edit the fields you want to change then click submit</h3>
         <%= form_for @document do |f| %>
+            <%= render 'shared/error_messages', object: f.object %>
             <%= f.label :Title %>
             <%= f.text_field :title %>
 

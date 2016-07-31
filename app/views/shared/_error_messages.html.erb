@@ -1,13 +1,15 @@
 <div class= "errors">
-    <% if @user.errors.any? %>
+    <% if object.errors.any? %>
+
         <div class ="callout alert">
-        The form contains <%= pluralize(@user.errors.count, "error") %>
+            The form contains <%= pluralize(object.errors.count, "error") %>
     </div>
     <ul>
-        <% @user.errors.full_messages.each do |message| %>
+        <% object.errors.full_messages.each do |message| %>
             <li> <%= message %></li>
         <% end %>
     </ul>
 <% end %>
 </div>
+
 
