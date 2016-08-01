@@ -13,8 +13,7 @@
             <%= f.text_field :tag %>
 
             <%= f.label :Department %>
-            <%= f.text_field :department %>
-
+            <%= f.select(:department, Document::CLASS_LIST, prompt: "Select department") %>
             <%= f.submit "Add New Document", class: "button extended primary" %>
         <% end %>
     </div>

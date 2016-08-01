@@ -14,7 +14,7 @@
             <%= f.text_field :tag %>
 
             <%= f.label :Department %>
-            <%= f.text_field :department %>
+            <%= f.select(:department, Document::CLASS_LIST, prompt: "Select department") %>
 
             <%= f.submit "Update Document", class: "button large extended primary" %>
 
