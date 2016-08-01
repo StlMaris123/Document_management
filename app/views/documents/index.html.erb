@@ -1,14 +1,16 @@
 <% provide(:title, "All documents") %>
 <div class="top-bar">
     <ul class="dropdown menu" data-dropdown-menu>
-    <a>Department Categories</a>
-        <ul class="menu vertical">
-            <li> <%= link_to "Operations", documents_path(department: "Operations") %></li>
-            <li> <%= link_to "Finance", documents_path(department: "Finance") %></li>
-            <li> <%= link_to "IT", documents_path(department: "IT") %></li>
-            <li> <%= link_to "Marketing", documents_path(department: "Marketing") %></li>
-            <li> <%= link_to "Credit", documents_path(department: "Credit") %></li>
-        </ul>
+        <li>
+            <a>Department Categories</a>
+            <ul class="menu">
+                <li> <%= link_to "Operations", documents_path(department: "Operations") %></li>
+                <li> <%= link_to "Finance", documents_path(department: "Finance") %></li>
+                <li> <%= link_to "IT", documents_path(department: "IT") %></li>
+                <li> <%= link_to "Marketing", documents_path(department: "Marketing") %></li>
+                <li> <%= link_to "Credit", documents_path(department: "Credit") %></li>
+            </ul>
+        </li>
     </ul>
 </div>
 
