@@ -18,10 +18,13 @@ class DocumentsController < ApplicationController
   def index
     if params[:department]
       @documents =Document.where("department = ?",params[:department])
+    elsif params[:search]
+      @documents = Document.search(params[:search])
     else
-    @documents = Document.all
+      @documents = Document.all
     end
   end
+
 
   def show
     @document = Document.find(params[:id])

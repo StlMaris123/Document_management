@@ -12,7 +12,15 @@
             </ul>
         </li>
     </ul>
+    <div class="top-bar-right">
+        <%= form_tag(documents_path, :method => 'get', id: "search-form") do  %>
+            <%= text_field_tag :search, params[:search], placeholder: "Search Documents" %>
+            <%= submit_tag "Search", :name => nil %>
+        <% end %>
+    </div>
+
 </div>
+
 
 <table>
     <thead>
