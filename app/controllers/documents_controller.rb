@@ -16,9 +16,10 @@ class DocumentsController < ApplicationController
   end
 
   def index
+    if params[:department]
+      @documents =Document.where("department = ?",params[:department])
+    else
     @documents = Document.all
-    if params[:movies]
-      @document = where("department = ?",params[:movies])
     end
   end
 

@@ -7,7 +7,8 @@ User.create!(name: "Stella Njage",
   title = Faker::Book.title
   link  = Faker::Internet.url
   tag   = Faker::Book.genre
-  department = Faker::Commerce.department(5)
+  departments = ["Operations", "Finance", "IT", "Marketing", "Credit"]
+department = departments[rand(5)]
     Document.create!(title: title,
                      link: link,
                      tag: tag,
