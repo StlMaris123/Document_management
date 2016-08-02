@@ -33,6 +33,8 @@ class User < ApplicationRecord
     BCrypt::Password.new(digest).is_password?(token)
   end
 
+  #activates an account
+
   def forget
     update_attribute(:remember_digest, nil)
   end
