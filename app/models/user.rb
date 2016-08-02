@@ -19,7 +19,7 @@ class User < ApplicationRecord
     SecureRandom.urlsafe_base64
   end
 
-  #Rememebers a user in the database for use in persistent sessions
+  #Rememembers a user in the database for use in persistent sessions
   def remember
     self.remember_token = User.new_token
     update_attribute(:remember_digest, User.digest(remember_token))
