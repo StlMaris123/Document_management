@@ -37,6 +37,7 @@ class UserTest < ActiveSupport::TestCase
       assert @user.valid?,"#{valid_address.inspect} should be valid"
     end
   end
+
   test "invalid email addresses should be rejectected" do
     invalid_addresses = %w[ste@gmail ste@ga,com ste@gam+mail ste.co.ke ste@gmail_com]
     invalid_addresses.each do |invalid_address|
@@ -44,6 +45,7 @@ class UserTest < ActiveSupport::TestCase
       assert_not @user.valid?,"#{invalid_address.inspect} should be valid"
     end
   end
+
   test "email addresses should be unique" do
     duplicate_user = @user.dup
     duplicate_user.email = @user.email.upcase
@@ -57,7 +59,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "authenticated? should return false for a user with nil digest" do
-    assert_not @user.authenticated?('')
+    assert_not @user.authenticated?(:remember, '')
   end
 end
 
