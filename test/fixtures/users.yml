@@ -3,7 +3,11 @@ stella:
     email: stellanjage@yahoo.com
     password_digest: <%= User.digest('password') %>
     admin: true
+    activated: true
+    activated_at: <%= Time.zone.now %>
 boris:
   name: Boris Njage
   email: boris@gmail.com
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
