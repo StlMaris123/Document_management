@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   root 'fixed_pages#home'
 
   get 'about' => 'fixed_pages#about'
@@ -20,5 +24,7 @@ Rails.application.routes.draw do
   resources :documents
 
   resources :account_activations, only: [:edit]
+
+  resources  :password_resets,    only: [:new, :create, :edit, :update]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
