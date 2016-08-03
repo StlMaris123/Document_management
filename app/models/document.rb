@@ -8,7 +8,6 @@ class Document < ApplicationRecord
   CLASS_LIST = ["Operations", "Finance", "IT", "Marketing", "Credit"]
 
   def self.search(search)
-    where("title LIKE ?", "%#{search}%")
-    where("tag LIKE ?", "%#{search}%")
+    where("title LIKE ? OR tag LIKE ? OR department LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
   end
 end
