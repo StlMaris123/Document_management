@@ -16,15 +16,17 @@ User.create!(name: name,
              activated: true,
              activated_at: Time.zone.now)
 end
-100.times do |d|
+
+users = User.order(:created_at).take(5)
+50.times do 
   title = Faker::Book.title
   link  = Faker::Internet.url
   tag   = Faker::Book.genre
   departments = ["Operations", "Finance", "IT", "Marketing", "Credit"]
 department = departments[rand(5)]
-    Document.create!(title: title,
+  users.each { |user| user.documents.create!(title: title,
                      link: link,
                      tag: tag,
-                     department: department )
+                     department: department )}
     puts "#{title}, "
 end
