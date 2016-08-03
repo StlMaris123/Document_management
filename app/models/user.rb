@@ -49,7 +49,7 @@ class User < ApplicationRecord
   def create_reset_digest
     self.reset_token = User.new_token
     update_attribute(:reset_digest, User.digest(reset_token))
-    update_atrribute(:reset_sent_at, Time.zone.now)
+    update_attribute(:reset_sent_at, Time.zone.now)
   end
 
 #sends the password reset email
@@ -60,6 +60,13 @@ class User < ApplicationRecord
   def forget
     update_attribute(:remember_digest, nil)
   end
+
+
+  #Returns true if password reset has expired
+  def password_reset_expired?
+    reset_sent_at < 2.hours.ago
+  end
+
   private
   def downcase_email
     self.email = email.downcase
