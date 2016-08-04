@@ -1,5 +1,6 @@
 <% provide(:title, "All documents") %>
-<div class="top-bar">
+<h5> You have <%=pluralize(@documents.count,"document") %> </h5>
+<div class="row">
     <ul class="dropdown menu" data-dropdown-menu>
         <li>
             <a>Department Categories</a>

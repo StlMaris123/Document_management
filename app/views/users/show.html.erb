@@ -1,7 +1,30 @@
 <% provide(:title, @user.name) %>
 <div class="row">
     <div class ="medium-4 columns">
-        <%= gravatar_for @user %>
-        <h3> <%= @user.name %> </h3>
+        <h3>Hello, <%= @user.name %> </h3>
+        <h5> You have <%= pluralize(@documents.count, "document") %>
+    </div>
+    <div class="medium-8 columns medium-offset-4">
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</h1>
+                    <th>Link</h1>
+                    <th>Tag</h1>
+                    <th>Department</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @documents.each do |document| %>
+                    <tr>
+                        <td> <%= document.title %></td>
+                        <td> <%= document.link %></td>
+                        <td> <%= document.tag %></td>
+                        <td> <%= document.department %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+
+        </table>
     </div>
 </div>
