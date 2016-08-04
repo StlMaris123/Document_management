@@ -9,18 +9,18 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
     get new_password_reset_path
     assert_template 'password_resets/new'
     # Invalid email
-    post password_resets_path, password_reset: { email: ""  }
+    post password_resets_path,params:{ password_reset: { email: ""  }}
     assert_not flash.empty?
     assert_template 'password_resets/new'
     # Valid email
-    post password_resets_path, password_reset: { email: @user.email  }
+    post password_resets_path,params:{ password_reset: { email: @user.email  }}
     assert_not_equal @user.reset_digest, @user.reload.reset_digest
     assert_equal 1, ActionMailer::Base.deliveries.size
     assert_not flash.empty?
     assert_redirected_to root_url
     # Password reset form
     user = assigns(:user)
-    # # Wrong email
+    # Wrong email
     get edit_password_reset_path(user.reset_token, email: "")
     assert_redirected_to root_url
     # Inactive user
@@ -38,42 +38,27 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
     # Invalid password & confirmation
     patch password_reset_path(user.reset_token),
       email: user.email,
-      user: { password:
-              "foobaz",
-              password_confirmation: "barquux"
-    }
+      params: {user: { password:
+                       "foobaz",
+                       password_confirmation: "barquux"
+    }}
       # assert_select 'div#errors'
       # Blank password
       patch password_reset_path(user.reset_token),
         email: user.email,
-        user: { password:
-                " ",
-                password_confirmation: "foobar"
-      }
+        params: { user: { password:      " ",
+                          password_confirmation: "foobar"  }}
         assert_not flash.empty?
         assert_template 'password_resets/edit'
-        patch password_reset_path(user.reset_token),
-          email: user.email,
-          user: { password:
-                  "foobaz",
-                  password_confirmation: "barquux" }
           # assert_select 'div#error_explanation'
-          # Blank password
+          # Valid password & confirmation
           patch password_reset_path(user.reset_token),
             email: user.email,
-            user: { password:
-                    " ",
-                    password_confirmation: "foobar" }
+            params: {user: { password:
+                             "foobaz",
+                             password_confirmation: "foobaz" }}
+            assert is_logged_in?
             assert_not flash.empty?
-            assert_template 'password_resets/edit'
-            # Valid password & confirmation
-            patch password_reset_path(user.reset_token),
-              email: user.email,
-              user: { password:
-                      "foobaz",
-                      password_confirmation: "foobaz" }
-              assert is_logged_in?
-              assert_not flash.empty?
-              assert_redirected_to user
+            assert_redirected_to user
   end
 end

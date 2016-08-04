@@ -2,6 +2,7 @@
 <div class="row">
     <div class ="medium-4 columns">
         <h3>Hello, <%= @user.name %> </h3>
+        <%= gravatar_for @user %>
         <h5> You have <%= pluralize(@documents.count, "document") %>
     </div>
     <div class="medium-8 columns medium-offset-4">
@@ -18,7 +19,7 @@
                 <% @documents.each do |document| %>
                     <tr>
                         <td> <%= document.title %></td>
-                        <td> <%= document.link %></td>
+                        <td> <%= link_to document.link, document.link%></td>
                         <td> <%= document.tag %></td>
                         <td> <%= document.department %></td>
                     </tr>

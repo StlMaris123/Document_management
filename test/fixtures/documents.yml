@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  link: MyString
-  tag: MyString
-  department: MyString
+  title: Love Affairs
+  link: https://www.me.com
+  tag: secret
+  department: Finance
 
 two:
-  title: MyString
-  link: MyString
-  tag: MyString
-  department: MyString
+  title: Code Ninety
+  link: https://code90.com
+  tag: code
+  department: Credit
