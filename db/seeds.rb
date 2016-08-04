@@ -30,3 +30,15 @@ department = departments[rand(5)]
                      department: department )}
     puts "#{title}, "
 end
+50.times do 
+  title = Faker::Book.title
+  link  = Faker::Internet.url
+  tag   = Faker::Book.genre
+  departments = ["Operations", "Finance", "IT", "Marketing", "Credit"]
+department = departments[rand(5)]
+  users.each { |user| user.documents.create!(title: title,
+                     link: link,
+                     tag: tag,
+                     department: department )}
+    puts "#{title}, "
+end
