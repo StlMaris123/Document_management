@@ -4,6 +4,7 @@
         <h3>Hello, <%= @user.name %> </h3>
         <%= gravatar_for @user %>
         <h5> You have <%= pluralize(@documents.count, "document") %>
+        <%= link_to "Add new Doc", new_document_path, class: "button large primary" %>
     </div>
     <div class="medium-8 columns medium-offset-4">
         <table>
@@ -13,6 +14,7 @@
                     <th>Link</h1>
                     <th>Tag</h1>
                     <th>Department</th>
+                    <th> Edit </th>
                 </tr>
             </thead>
             <tbody>
@@ -22,6 +24,7 @@
                         <td> <%= link_to document.link, document.link%></td>
                         <td> <%= document.tag %></td>
                         <td> <%= document.department %></td>
+                        <td> <%= link_to "Edit Doc", edit_document_path(document) %>
                     </tr>
                 <% end %>
             </tbody>
