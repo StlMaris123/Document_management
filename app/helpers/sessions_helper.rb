@@ -20,6 +20,7 @@ module SessionsHelper
     !current_user.nil?
   end
   def remember(user)
+    log_in(user)
     cookies[:remember_token] = { value: user.remember_token,
                                  expires: 7.days.from_now}
     cookies.permanent.signed[:user_id] = user.id
