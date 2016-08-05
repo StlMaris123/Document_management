@@ -1,6 +1,6 @@
 class DocumentsController < ApplicationController
   before_action :logged_in_user, only: [:create, :edit, :update, :index, :destroy]
- # before_action :correct_user, only: [:create, :edit, :update, :index, :destroy]
+ before_action :correct_user, only: [:create, :edit, :update,  :destroy]
   def new
     @document = Document.new
   end
@@ -44,8 +44,17 @@ class DocumentsController < ApplicationController
     end 
   end
 
+  #confirms the correct user
+
+
   private
   def document_params
     params.require(:document).permit(:title, :link, :tag, :department)
+  end
+
+
+  def correct_user
+    @document = current_user.documents.find_by(id: params[:id])
+    redirect_to root_url if @document.nil?
   end
 end
