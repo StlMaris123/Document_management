@@ -25,6 +25,7 @@
                         <td> <%= document.tag %></td>
                         <td> <%= document.department %></td>
                         <td> <%= link_to "Edit Doc", edit_document_path(document) %>
+                        <td> <%= link_to "Delete Doc", document, method: :delete, data: { confirm:"You sure?" } %>
                     </tr>
                 <% end %>
             </tbody>

@@ -1,6 +1,6 @@
 class DocumentsController < ApplicationController
   before_action :logged_in_user, only: [:create, :edit, :update, :index, :destroy]
- before_action :correct_user, only: [:create, :edit, :update,  :destroy]
+  before_action :correct_user, only: [:create, :edit, :update,  :destroy]
   def new
     @document = Document.new
   end
@@ -33,7 +33,7 @@ class DocumentsController < ApplicationController
   def edit
     @document = Document.find(params[:id])
   end
-   
+
   def update
     @document = Document.find(params[:id])
     if @document.update_attributes(document_params)
@@ -44,8 +44,13 @@ class DocumentsController < ApplicationController
     end 
   end
 
-  #confirms the correct user
-
+  def destroy
+    @document = Document.find(params[:id])
+    @document.destroy
+    flash[:success] = "the document \" #{@document.title}\" was deleted"
+    redirect_to current_user
+    
+  end
 
   private
   def document_params
