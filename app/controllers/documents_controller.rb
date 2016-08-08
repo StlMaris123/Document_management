@@ -1,6 +1,6 @@
 class DocumentsController < ApplicationController
-  before_action :logged_in_user, only: [:create, :edit, :update, :index, :destroy]
-  before_action :correct_user, only: [:create, :edit, :update,  :destroy]
+  before_action :logged_in_user, only: [:new, :create, :edit, :update, :show, :index, :destroy]
+  before_action :correct_user, only: [ :edit, :update,  :destroy]
   def new
     @document = Document.new
   end
@@ -35,7 +35,7 @@ class DocumentsController < ApplicationController
   end
 
   def update
-    @document = Document.find(params[:id])
+    @document = Document.find_by(id: params[:id])
     if @document.update_attributes(document_params)
       flash[:success] = "The document  was successfully updated"
       redirect_to documents_url
@@ -54,12 +54,21 @@ class DocumentsController < ApplicationController
 
   private
   def document_params
-    params.require(:document).permit(:title, :link, :tag, :department)
+    params.require(:document).permit(:title, :link, :tag, :department,  :user_id)
   end
 
 
   def correct_user
     @document = current_user.documents.find_by(id: params[:id])
-    redirect_to root_url if @document.nil?
+    redirect_to(root_url) unless @document
   end
+
+ def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:alert] = "Please log in first" 
+      redirect_to login_url
+    end
+  end
+
 end

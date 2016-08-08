@@ -27,7 +27,7 @@ class DocumentEditTest < ActionDispatch::IntegrationTest
     tag        = "Speech"
     link       = "http://bogisichdurgan.io/israel"
     department = "Credit"
-    patch document_path(@document),params: { document: { title: name,
+    patch document_path(@document),params: { document: { title: title,
                                                          tag: tag,
                                                          link: link, 
                                                          department: department} }

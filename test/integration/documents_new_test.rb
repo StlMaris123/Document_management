@@ -20,15 +20,17 @@ class DocumentsNewTest < ActionDispatch::IntegrationTest
     log_in_as(@user)
     get new_document_path
     assert_template 'documents/new'
+    document_params = {
+      title: "Love matters",
+      tag: "Love",
+      link: "http://www.love.com",
+      department: "Credit",
+      user_id: @user.id
+
+    }
+
     assert_difference 'Document.count', 1 do
-      post documents_path, params: { document: { title: "Love Affairs",
-                                                 tag: "Love",
-                                                 link: "https://www.love.com",
-                                                 department: "Finance"
-
-      }
-
-      }
+      post documents_path, params: { document: document_params }
     end
     assert_redirected_to documents_url
     assert_not flash.empty?

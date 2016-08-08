@@ -1,10 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: Love Affairs
-  link: https://www.me.com
-  tag: secret
-  department: Finance
+  title: "Love Affairs"
+  link: "https://www.me.com"
+  tag: "secret"
+  department: "Finance"
+  user: stella
 
 two:
   title: Code Ninety
