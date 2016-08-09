@@ -27,7 +27,7 @@ class DocumentsController < ApplicationController
 
 
   def show
-    @document = Document.find(params[:id])
+    @document = current_user.documents.find_by(id: params[:id])
   end
 
   def edit

@@ -9,10 +9,12 @@
     </thead>
     <tbody>
         <tr>
-            <td><%= @document.title %></td>
-            <td> <%= @document.link %></td>
-            <td> <%= @document.tag %> </td>
-            <td> <%= @document.department %></td>
+            <% current_user.documents.each do |document| %>
+            <td><%= document.title %></td>
+            <td> <%=document.link %></td>
+            <td> <%= document.tag %> </td>
+            <td> <%= document.department %></td>
+            <% end %>
         </tr>
     </tbody>
 </table>
