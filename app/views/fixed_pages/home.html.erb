@@ -1,11 +1,14 @@
 <% provide(:title, "Home") %>
 <div class="row">
-    <%= image_tag("doc1.jpeg", :alt => "image") %>
-    <h1>DOCUMENT-MANAGEMENT SYSTEM</h1>
+    <%# <% if logged_in? %1> %>
+    <%# <% else %1> %>
+        <%= image_tag("doc1.jpeg", :alt => "image") %>
+        <h1>DOCUMENT-MANAGEMENT SYSTEM</h1>
         <h3>A</h3>
         <h3>FAST</h3>
         <h3>EASY</h3>
         <h3>FLEXIBLE</h3><b> and</b>
         <h3>SECURE Way To Store Your Documents</h3>
         <%= link_to "signup", new_user_url, class: "button large primary" %>
+        <%# <% end %1> %>
 </div>
