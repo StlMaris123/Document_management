@@ -11,14 +11,14 @@
             <li> <%= link_to fa_icon('info', text: "About"), about_url %> </li>
             <li> <%= link_to fa_icon('phone', text: "Contact"), contact_url %></li>
             <% if logged_in? %>
-                <li> <%= link_to "Users", users_path %> </li>
-                <li> <%= link_to "All Documents", documents_path %></li>
+                <li> <%= link_to fa_icon('users', text: "Users"), users_path %> </li>
+                <li> <%= link_to fa_icon('briefcase', text: "All Documents"), documents_path %></li>
                 <li>
                     <a>Account</a>
                     <ul class="menu vertical">
-                        <li> <%= link_to "Profile", current_user%></li>
-                        <li> <%= link_to "Settings", edit_user_path(current_user) %></li>
-                        <li> <%= link_to "Logout", logout_path, method: "delete"%> </li>
+                        <li> <%= link_to fa_icon('user', text: "Profile"), current_user%></li>
+                        <li> <%= link_to fa_icon('cog', text: "Settings"), edit_user_path(current_user) %></li>
+                        <li> <%= link_to fa_icon('sign-out', text: "Logout"), logout_path, method: "delete"%> </li>
                     </ul>
                 </li>
 
