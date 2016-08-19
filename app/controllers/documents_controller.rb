@@ -28,6 +28,7 @@ class DocumentsController < ApplicationController
 
   def show
     @document = current_user.documents.find_by(id: params[:id])
+
   end
 
   def edit
@@ -70,5 +71,4 @@ class DocumentsController < ApplicationController
       redirect_to login_url
     end
   end
-
 end

@@ -32,6 +32,7 @@ gem 'recaptcha'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'foundation-rails'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'rails-controller-testing'
