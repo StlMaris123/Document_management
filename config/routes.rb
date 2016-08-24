@@ -10,8 +10,6 @@ Rails.application.routes.draw do
 
   get 'help' => 'fixed_pages#help'
 
-  get 'contact' => 'fixed_pages#contact'
-
   get 'login' => 'sessions#new'
 
   post 'login' => 'sessions#create'

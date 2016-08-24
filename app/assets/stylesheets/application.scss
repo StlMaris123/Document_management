@@ -28,9 +28,19 @@
      .header{
          background-color: black;
          color: white;
-         padding-right:-5px ;
+         padding: 0 ;
      }
      .sidebar{
           background-color: #1e4753;
      }
+}
+
+#footer{
+    padding: 0;
+    bottom: 0;
+    text-align: center;
+}
+.footer{
+     background-color: #d2d2d2;
+     padding: 0;
 }
