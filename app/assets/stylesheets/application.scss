@@ -23,3 +23,14 @@
     background-color: gray;
     text-align: center;
 }
+.centreText{
+     text-align: center;
+     .header{
+         background-color: black;
+         color: white;
+         padding-right:-5px ;
+     }
+     .sidebar{
+          background-color: #1e4753;
+     }
+}

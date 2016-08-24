@@ -4,44 +4,50 @@
         <div class="medium-4 columns medium-offset-4">
             <%= render 'shared/user_info' %>
         <% else %>
-            <div class="orbit" role="region" aria-label="Document images" data-orbit>
-                <ul class="orbit-container">
-                    <button class="orbit-previous"><span class="show-for-sr">Previous slide</span>&#9664;&#xFE0E;</button>
-                    <button class="orbit-next"><span class="show-for-sr">Next slide</span>&#9654;&#xFE0E;</button>
-                            <li class="is-active orbit-slide">
-                                <%= image_tag("1.jpg", class: "orbit-class", alt: "Doc") %>
-                                <figcaption class="orbit-caption">Lets store it!</figcaption>
-                            </li>
-                            <li class="orbit-slide">
-                                <%= image_tag("2.jpg", class: "orbit-class", alt: "Doc") %>
-                                <figcaption class="orbit-caption">Its safe!</figcaption>
-                            </li>
-                            <li class="orbit-slide">
-                                <%= image_tag("3.jpg", class: "orbit-class", alt: "Doc") %>
-                                <figcaption class="orbit-caption">Its Fast!!</figcaption>
-                            </li>
-                            <li class="orbit-slide">
-                                <%= image_tag("4.jpg", class: "orbit-class", alt: "Doc") %>
-                                <figcaption class="orbit-caption">Pocket friendly!!</figcaption>
-                            </li>
-                </ul>
-                <nav class="orbit-bullets">
-                    <button class="is-active" data-slide="0"><span class="show-for-sr">First</span><span class="show-for-sr">current slide</span></button>
-                        <button data-slide="1" class="show-for-sr">second slide</span></button>
-                        <button data-slide="2"><span class="show-for-sr">Third slide</span></button>
-                        <button data-slide="3"><span class="show-for-sr">fourth slide</span></button>
-                </nav>
+            <div class="row">
+                <section class="centreText">
+                    <div class="header">  <h1>Document Management System</h1></div>
+                    <div class="medium-4 columns sidebar">
+                        <h3>A</h3>
+                        <h3>FAST</h3>
+                        <h3>EASY</h3>
+                        <h3>FLEXIBLE</h3>
+                        <h3>AND</h3>
+                        <h3>SECURE Way To Store Your Documents</h3>
+                    <%= link_to fa_icon('user-plus', text: "signup"), new_user_url, class: "button large primary" %>
+                    </div>
+                    <div class="medium-8 columns">
+                        <div class="orbit" role="region" aria-label="Document images" data-orbit>
+                            <ul class="orbit-container">
+                                <button class="orbit-previous"><span class="show-for-sr">Previous slide</span>&#9664;&#xFE0E;</button>
+                                <button class="orbit-next"><span class="show-for-sr">Next slide</span>&#9654;&#xFE0E;</button>
+                                <li class="is-active orbit-slide">
+                                    <%= image_tag("1.jpg", class: "orbit-image", alt: "Doc") %>
+                                    <figcaption class="orbit-caption">Lets store it!</figcaption>
+                                </li>
+                                <li class="orbit-slide">
+                                    <%= image_tag("2.jpg", class: "orbit-image", alt: "Doc") %>
+                                    <figcaption class="orbit-caption">Its safe!</figcaption>
+                                </li>
+                                <li class="orbit-slide">
+                                    <%= image_tag("3.jpg", class: "orbit-image", alt: "Doc") %>
+                                    <figcaption class="orbit-caption">Its Fast!!</figcaption>
+                                </li>
+                                <li class="orbit-slide">
+                                    <%= image_tag("4.jpg", class: "orbit-image", alt: "Doc") %>
+                                    <figcaption class="orbit-caption">Pocket friendly!!</figcaption>
+                                </li>
+                            </ul>
+                            <nav class="orbit-bullets">
+                                <button class="is-active" data-slide="0"><span class="show-for-sr">First</span><span class="show-for-sr">current slide</span></button>
+                                <button data-slide="1" class="show-for-sr">second slide</span></button>
+                                <button data-slide="2"><span class="show-for-sr">Third slide</span></button>
+                                <button data-slide="3"><span class="show-for-sr">fourth slide</span></button>
+                            </nav>
+                        </div>
+                    </div>
             </div>
-
-            <div class="homebody">
-                <h1>DOCUMENT-MANAGEMENT SYSTEM</h1>
-                <h3>A</h3>
-                <h3>FAST</h3>
-                <h3>EASY</h3>
-                <h3>FLEXIBLE</h3><b> and</b>
-                <h3>SECURE Way To Store Your Documents</h3>
-                <%= link_to fa_icon('user-plus', text: "signup"), new_user_url, class: "button large primary" %>
-            <% end %>
-            </div>
+                </section>
+                <% end %>
         </div>
 </div>
