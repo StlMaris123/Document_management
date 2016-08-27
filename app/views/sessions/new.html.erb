@@ -1,0 +1,13 @@
+<% provide(:title, "SignIn") %>
+<div class="medium-6 columns medium-offset-3">
+    <h1> Sign In</h1>
+    <%= form_for(:session, url: sessions_new_url)  do |f|%>
+        <%= f.label :Name %>
+        <%= f.text_field :name %>
+
+        <%= f.label :Password %>
+        <%= f.text_field :password %>
+        <%= f.submit "SignIn", class: "button large secondary" %>
+    <% end %>
+    <h5> New user? Sign Up Now <%= link_to "Signup", users_new_url %>
+</div>
