@@ -9,4 +9,14 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     end
     assert_template 'users/new'
   end
+
+  test "signup with valid information" do
+    get users_new_url
+    assert_difference 'User.count', 1 do
+      post_via_redirect users_path, params:{ user: { name: "Stella", email: "stella@yahoo.com",
+                                        password: "rainbow", password_connfirmation: "rainbow" } }
+    end
+    assert_template 'users/show'
+  end
+
 end
