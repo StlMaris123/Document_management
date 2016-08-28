@@ -7,6 +7,9 @@
 
         <%= f.label :Password %>
         <%= f.text_field :password %>
+        <%= f.label :remember_me, class: "checkbox" do  %>
+            <%= f.check_box :remember_me %>
+            <% end %>
         <%= f.submit "SignIn", class: "button large secondary" %>
     <% end %>
     <h5> New user? Sign Up Now <%= link_to "Signup", users_new_url %>
