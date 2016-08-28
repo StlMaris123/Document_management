@@ -1,7 +1,7 @@
 <% provide(:title, "SignIn") %>
 <div class="medium-6 columns medium-offset-3">
     <h1> Sign In</h1>
-    <%= form_for(:session, url: sessions_new_url)  do |f|%>
+    <%= form_for(:session, url: login_url)  do |f|%>
         <%= f.label :Name %>
         <%= f.text_field :name %>
 
