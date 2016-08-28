@@ -24,11 +24,12 @@ module SessionsHelper
                                  expires: 7.days.from_now}
     cookies.permanent.signed[:user_id] = user.id
   end
-   def forget(user)
-     user.forget
-     cookies.delete(:user_id)
-     cookies.delete(:remember_token)
-   end
+
+  def forget(user)
+    user.forget
+    cookies.delete(:user_id)
+    cookies.delete(:remember_token)
+  end
 
   #logs out the current user
   def log_out
