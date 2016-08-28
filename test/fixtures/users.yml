@@ -2,3 +2,7 @@ stella:
     name: Stella Njage
     email: stellanjage@yahoo.com
     password_digest: <%= User.digest('password') %>
+boris:
+  name: Boris Njage
+  email: boris@gmail.com
+  password_digest: <%= User.digest('password')
