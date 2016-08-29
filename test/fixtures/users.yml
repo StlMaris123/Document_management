@@ -6,4 +6,4 @@ stella:
 boris:
   name: Boris Njage
   email: boris@gmail.com
-  password_digest: <%= User.digest('password')
+  password_digest: <%= User.digest('password') %>
