@@ -12,12 +12,12 @@ class ActiveSupport::TestCase
     !session[:user_id].nil?
   end
 
-  # logs in a test user
+  #logs in a test user
   def log_in_as(user, options = {})
     password = options[:password]       || 'password'
     remember_me = options[:remember_me] || '1'
     if integration_test?
-      post login_path,params:{ session: { name: user.name,
+      post login_path, params: { session: { name: user.name,
                                   password: password,
                                   remember_me: remember_me}}
     else

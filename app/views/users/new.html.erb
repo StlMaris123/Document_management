@@ -1,23 +1,24 @@
 <% provide(:title, "SignUp") %>
 <h1>Sign Up</h1>
 <h5>Sign up to start enjoying our services</h5>
+<div class="row">
+    <div class="medium-4 columns medium-offset-4">
+        <%= form_for @user do |f|  %>
+            <%= render 'shared/error_messages' %>
+            <%= f.label :Name %>
+            <%= f.text_field :name %>
 
-<class="medium-4 columns medium-offset-4">
-<%= form_for @user do |f|  %>
-    <%= render 'shared/error_messages' %>
-    <%= f.label :Name %>
-    <%= f.text_field :name %>
+            <%= f.label :Email %>
+            <%= f.email_field :email %>
 
-    <%= f.label :Email %>
-    <%= f.email_field :email %>
-    
 
-    <%= f.label :Password %>
-    <%= f.password_field :password %>
+            <%= f.label :Password %>
+            <%= f.password_field :password %>
 
-    <%= f.label :Password_Confirmation %>
-    <%= f.password_field :Password_Confirmation %>
+            <%= f.label :Password_Confirmation %>
+            <%= f.password_field :password_confirmation %>
 
-    <%= f.submit "SignUp", class: "button large" %>
-<% end %>
+            <%= f.submit "SignUp", class: "button large primary" %>
+        <% end %>
+    </div>
 </div>
