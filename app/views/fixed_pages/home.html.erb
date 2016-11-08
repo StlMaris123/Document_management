@@ -4,8 +4,8 @@
         <div class="medium-4 columns medium-offset-4">
             <%= render 'shared/user_info' %>
         <% else %>
-            <div class="row">
-                <section class="centreText">
+            <section class="centreText">
+                <div class="row">
                     <div class="header">  <h1>Document Management System</h1></div>
                     <div class="medium-4 columns sidebar">
                         <h3>A</h3>
@@ -14,7 +14,7 @@
                         <h3>FLEXIBLE</h3>
                         <h3>AND</h3>
                         <h3>SECURE Way To Store Your Documents</h3>
-                    <%= link_to fa_icon('user-plus', text: "signup"), new_user_url, class: "button large primary" %>
+                        <%= link_to fa_icon('user-plus', text: "signup"), new_user_url, class: "button large primary" %>
                     </div>
                     <div class="medium-8 columns">
                         <div class="orbit" role="region" aria-label="Document images" data-orbit>
@@ -30,24 +30,26 @@
                                     <figcaption class="orbit-caption">Its safe!</figcaption>
                                 </li>
                                 <li class="orbit-slide">
-                                    <%= image_tag("3.jpg", class: "orbit-image", alt: "Doc") %>
+                                    <%= image_tag("4.jpg", class: "orbit-image", alt: "Doc") %>
                                     <figcaption class="orbit-caption">Its Fast!!</figcaption>
                                 </li>
                                 <li class="orbit-slide">
-                                    <%= image_tag("4.jpg", class: "orbit-image", alt: "Doc") %>
+                                    <%= image_tag("3.jpg", class: "orbit-image", alt: "Doc") %>
                                     <figcaption class="orbit-caption">Pocket friendly!!</figcaption>
                                 </li>
                             </ul>
                             <nav class="orbit-bullets">
-                                <button class="is-active" data-slide="0"><span class="show-for-sr">First</span><span class="show-for-sr">current slide</span></button>
-                                <button data-slide="1" class="show-for-sr">second slide</span></button>
+                                <button class="is-active" data-slide="0"><span class="show-for-sr">First</span><span class="show-for-sr">
+                                current slide</span></button>
+                                <button data-slide="1"><span class="show-for-sr">second slide</span></button>
                                 <button data-slide="2"><span class="show-for-sr">Third slide</span></button>
                                 <button data-slide="3"><span class="show-for-sr">fourth slide</span></button>
                             </nav>
-                        </div>
                     </div>
-            </div>
-                </section>
-                <% end %>
+
+                    </div>
+                </div>
+            </section>
+        <% end %>
         </div>
 </div>
